@@ -7,25 +7,25 @@ describe("Employee", () => {
     });
 
     it("Can set the name", () => {
-        const name = "Bob";
+        const name = "Fred";
         expect(e.name).toBe(name);
     });
 
     it("Can get the ID", () => {
-        const id = 25;
-        const e = new Employee("Ed", id);
+        const id = 22;
+        const e = new Employee("Fred", id);
         expect(e.id).toBe(id);
     });
 
     it("Can get the email", () => {
-        const email = "Jane@jane.com";
-        const e = new Employee("Jane", 5, email);
+        const email = "Fred@gmail.com";
+        const e = new Employee("Fred", 22, email);
         expect(e.email).toBe(email);
     });
 
     it("Can return employee with getRole()", () => {
         const testEmployee = "Employee";
-        const e = new Employee("Cecilia, 10, C@hotmail.com");
+        const e = new Employee("Fred, 22, Fred@gmail.com");
         expect(e.getRole()).toBe(testEmployee);
     });
 })
