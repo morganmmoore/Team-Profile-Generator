@@ -2,6 +2,7 @@ const inquirer = require('inquirer');
 const Manager = require('./lib/Manager');
 const Intern = require('./lib/Intern');
 const Engineer = require('./lib/Engineer');
+
 const allEmployees = [];
 
 function createManager() {
@@ -98,19 +99,24 @@ function mainPrompt() {
     inquirer.prompt([
         {
             type: 'list',
-            message: 'What do you want to do next?',
+            message: 'What do you want to do?',
             name: 'main',
-            choices: ['Add Engineer', 'Add Intern', 'Done'],
+            choices: ['Add Engineer', 'Add Intern', 'Add Manager', 'Done'],
         },
     ]) .then((data) => {
         if (data.main === 'Add Engineer') {
             createEngineer();
         } else if (data.main === 'Add Intern') {
-            createIntern();
+            createIntern(); 
+        } else if (data.main === 'Add Manager') {
+            createManager();
         } else if (data.main === 'Done') {
             generateTeam();
         }
     })
 }
 
+mainPrompt();
 createManager();
+createEngineer();
+createIntern();
