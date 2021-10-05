@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const Employee = require('./lib/Employee');
 const Manager = require('./lib/Manager');
 const Intern = require('./lib/Intern');
 const Engineer = require('./lib/Engineer');
@@ -155,14 +156,14 @@ startHtml = () => {
 generateHtml = (employee) => {
     return new Promise(function(resolve, reject) {
         const name = employee.getName();
-        const role = employee.getRole();
-        const id = employee.getId();
-        const email = employee.getEmail();
+        // const role = employee.getRole();
+        // const id = employee.getId();
+        // const email = employee.getEmail();
 
         let data = '';
 
         if (role === 'Manager') {
-            const github = employee.getOfficeNumber();
+            //const officeNumber = employee.getOfficeNumber();
             
             data = `<div class="card col-6" style="width: 18rem;">
             <div class="card-body">
@@ -176,7 +177,7 @@ generateHtml = (employee) => {
             </ul>
         </div>`
         } else if (role === 'Engineer') {
-            const github = employee.getGithub();
+            //const github = employee.getGithub();
 
             data = `<div class="card col-6" style="width: 18rem;">
             <div class="card-body">
@@ -190,7 +191,7 @@ generateHtml = (employee) => {
             </ul>
         </div>`
         } else if (role === 'Intern') {
-            const school = employee.getSchool();
+            //const school = employee.getSchool();
 
             data = `<div class="card col-6" style="width: 18rem;">
             <div class="card-body">
