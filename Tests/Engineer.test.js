@@ -8,12 +8,12 @@ test("can set GitHub", () => {
 
 test("Can get gitHub username via getGithub()", () => {
     const testGithub = githubUser;
-    const e = new Engineer("Sally", 4, "Sally@yahoo.com", testGithub);
+    const e = new Engineer("Fred", 22, "Fred@gmail.com", testGithub);
     expect(e.getGithub()).toBe(testGithub);
 });
 
 test("getRole() should return 'Engineer'", () => {
     const role = "Engineer";
-    const e = new Engineer("Mandy", 17, "Mandy@gmail.com", role);
+    const e = new Engineer("Fred", 22, "Fred@gmail.com", role);
     expect(e.getRole()).toBe(role);
 });
